@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>rineris - Official</title>
+<title>rineris - Official Store</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-/* แก้ไขโทนสีเป็น ฟ้าเทอควอยซ์ และ ชมพู ตกแต่งเบาๆ */
 :root{
---bg:#E8FAFA; /* ฟ้าเทอควอยซ์อ่อนๆ */
---main:#FF9EBB; /* ชมพูพาสเทล */
---dark:#008080; /* สีเขียวอมฟ้าเข้ม สำหรับตัวหนังสือให้อ่านง่าย */
+/* ปรับโทนสีเป็น ฟ้าเทอร์ควอยซ์ และ ชมพู ตามบรีฟ */
+--bg:#E0F7FA; 
+--main:#40E0D0; /* Turquoise */
+--dark:#FF85B2; /* Pink Accent */
 --white:#FFFFFF;
---glow:rgba(255, 158, 187, 0.4); /* แสงเงาสีชมพู */
+--glow:rgba(64, 224, 208, 0.3);
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Mitr',sans-serif;}
@@ -40,7 +40,7 @@ box-shadow:0 8px 20px rgba(0,0,0,0.05);
 border:2px solid var(--main);
 }
 
-h1,h2,h3{color:var(--dark);}
+h1,h2,h3{color:var(--dark); margin-bottom: 15px;}
 .center{text-align:center;}
 
 .logo{
@@ -49,6 +49,7 @@ border-radius:50%;
 overflow:hidden;
 margin:0 auto 20px;
 box-shadow:0 6px 20px var(--glow);
+border: 3px solid var(--white);
 }
 
 .logo img{width:100%;height:100%;object-fit:cover;}
@@ -68,7 +69,7 @@ border-radius:25px;
 box-shadow:0 4px 10px var(--glow);
 font-size:13px;
 color:var(--dark);
-border: 1px solid #ffeef5;
+border: 1px solid #eee;
 }
 
 .btn{
@@ -79,12 +80,13 @@ border-radius:25px;
 text-decoration:none;
 margin-top:15px;
 font-weight:500;
+transition: 0.3s;
 }
 
 .btn-outline{
 background:#fff;
 border:2px dashed var(--main);
-color:var(--dark);
+color:var(--main);
 }
 
 .btn-main{
@@ -97,7 +99,6 @@ display:flex;
 align-items:center;
 gap:12px;
 margin-bottom:12px;
-color: var(--dark);
 }
 
 .step-num{
@@ -115,19 +116,33 @@ font-size:13px;
 display:flex;
 justify-content:space-between;
 margin-bottom:10px;
-background:#fffcfd;
+background:#faffff;
 padding:10px 15px;
 border-radius:15px;
-color: var(--dark);
-border: 1px solid #ffeef5;
+border-left: 4px solid var(--main);
 }
 
 .price-tag{
-background:var(--main);
+background:var(--dark);
 color:#fff;
 padding:3px 12px;
 border-radius:20px;
 font-size:14px;
+}
+
+/* สำหรับรูปภาพใน Section ใหม่ */
+.img-content {
+width: 100%;
+border-radius: 15px;
+margin-bottom: 10px;
+display: block;
+}
+
+.list-item {
+font-size: 14px;
+margin-bottom: 8px;
+color: #555;
+line-height: 1.6;
 }
 
 .footer{
@@ -150,24 +165,12 @@ padding:8px;
 border-radius:25px;
 background:#fff;
 text-decoration:none;
-color:var(--dark);
+color:var(--main);
 font-size:13px;
-border:1px solid #ffeef5;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
+border:1px solid var(--main);
 }
 
-.small{font-size:12px;opacity:.7;margin-top:10px; color: var(--dark);}
-
-/* ========================================= */
-/* ส่วน CSS ที่เพิ่มมาเพื่อจัด Layout ของใหม่ */
-/* ========================================= */
-.image-grid { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
-.image-grid img { width: calc(33.33% - 7px); border-radius: 12px; object-fit: cover; aspect-ratio: 1; border: 1px solid #ffeef5; }
-.image-single img { width: 100%; border-radius: 12px; margin-top: 10px; border: 1px solid #ffeef5; }
-.rules-list { font-size: 14px; color: var(--dark); line-height: 1.6; margin-top: 10px; }
-.highlight { font-weight: 500; color: #fff; background: #FF9EBB; padding: 2px 8px; border-radius: 15px; display: inline-block; margin-top: 5px;}
+.small{font-size:12px;opacity:.7;margin-top:10px;}
 </style>
 </head>
 
@@ -177,21 +180,85 @@ text-overflow: ellipsis;
 <div class="section center" style="border:none;box-shadow:none;background:transparent;">
 
 <div class="logo">
-<img src="-50_20251118193540.png" alt="logo">
+<img src="-50_20251118193540.png" alt="rineris logo">
 </div>
 
 <h1>rineris</h1>
-<p style="color:var(--dark);opacity:.8;margin:10px 0 20px;">
-จะมูจะตัดหรือจะแต่ง
+<p style="color:var(--dark);font-weight:500;margin:10px 0 20px;">
+จะมูจะตัดหรือจะแต่ง 🎀
 </p>
 
 <div class="badges">
-<div class="badge">🎬 CapCut | ขายแอพ และรับตัดต่อ</div>
+<div class="badge">🎬 CapCut & ตัดต่อ</div>
 <div class="badge">🔮 ดูดวง</div>
-<div class="badge">🎨 เว็บรับทำป้าย</div>
+<div class="badge">🎨 รับทำป้าย</div>
 </div>
 
-<a href="https://docs.google.com/spreadsheets/d/1-OKt-yfrnf19eACPvXyUJ3y4PthRKt6yqn3fxFNYVJY/edit?usp=sharing" class="btn btn-outline" target="_blank">
-เช็คคิวงาน ✨
+<a href="https://docs.google.com/spreadsheets/d/1-OKt-yfrnf19eACPvXyUJ3y4PthRKt6yqn3fxFNYVJY/edit?usp=sharing" target="_blank" class="btn btn-outline">
+เช็คคิวงาน (Check Q) ✨
 </a>
 </div>
+
+<div class="section">
+<h2>🔮 สายมู</h2>
+<img src="5.jpg" class="img-content">
+<img src="6.jpg" class="img-content">
+<img src="7.jpg" class="img-content">
+<a href="https://lin.ee/rVnmOtV" class="btn btn-main">จองคิวดูดวงคลิก</a>
+</div>
+
+<div class="section">
+<h2>🎬 CapCut</h2>
+<p style="margin-bottom:15px; color:var(--dark);">CapCut เริ่มต้น 25฿</p>
+<img src="cc1.png" class="img-content">
+<img src="cc2.png" class="img-content">
+<img src="cc3.png" class="img-content">
+<div class="price-row"><span>ราคาตัดต่อ</span><span class="price-tag">สอบถามเพิ่มเติม</span></div>
+<img src="cc.png" class="img-content">
+</div>
+
+<div class="section">
+<h2>⭐️ วิธีเข้าใช้งาน CapCut</h2>
+<img src="IMG_3136.jpg" class="img-content">
+<div class="list-item">• เข้าผ่าน <b>อีเมล & พาสเวิร์ด</b> (ห้าม login google)</div>
+<div class="list-item">• หากต้องการเข้าในคอม ต้องเข้าผ่านมือถือก่อน</div>
+<div class="list-item">⤷ ต้องสแกน QR จากมือถือเท่านั้น</div>
+<div class="list-item">⤷ เข้าคอมแล้ว <b>กรุณาออกจากโทรศัพท์ก่อน</b> เพื่อกันล็อก</div>
+<div class="list-item" style="color:red; font-weight:bold;">• ใช้ได้แค่ 1 เครื่องเท่านั้น!</div>
+</div>
+
+<div class="section">
+<h2>📋 ขั้นตอนการสั่ง</h2>
+<div class="step"><div class="step-num">1</div><div>สอบถามก่อนโอนทุกครั้ง</div></div>
+<div class="step"><div class="step-num">2</div><div>กรอกฟอร์ม เขียนรายละเอียด</div></div>
+<div class="step"><div class="step-num">3</div><div>ใส่ลิงก์ตัวอย่างงาน / แนบโลโก้</div></div>
+<div class="step"><div class="step-num">4</div><div>ส่งงานให้เช็ค / แจ้งยอด / ชำระเงิน</div></div>
+<div class="step"><div class="step-num">5</div><div>รอลงคิวและอัพเดทงาน</div></div>
+</div>
+
+<div class="section">
+<h2>📍 กฎของร้าน</h2>
+<div class="list-item">• คิวปกติ 1-7 วัน (งานตัดคลิป)</div>
+<div class="list-item">• คิวลัด +30 ถึง -150 (1-3 วัน)</div>
+<div class="list-item">• โอนเงินแล้ว <b>ไม่คืนเงินทุกกรณี</b></div>
+<div class="list-item">• ยกเลิกหลังเริ่มงานแล้ว คืนเงิน 50%</div>
+<div class="list-item">• ยกเลิกหลังเช็คงาน = ไม่คืนเงิน และส่งงานตามปกติ</div>
+</div>
+
+<div class="footer">
+<a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">ติดต่อสอบถาม LINE 🎀</a>
+
+<div class="socials">
+<a href="https://rineris.xdvz.xyz/">Shop</a>
+<a href="https://lin.ee/rVnmOtV">ดูดวง</a>
+<a href="https://line.me/ti/p/LfBtdhlrVa">Line</a>
+</div>
+
+<p class="small">
+© 2026 rineris Store - All Rights Reserved
+</p>
+</div>
+
+</div>
+</body>
+</html>

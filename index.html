@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rineris - Official</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* โทนสี ฟ้าเทอควอยซ์ - ชมพู */
+:root{
+--bg:#F0FDFA; 
+--main:#2DD4BF; 
+--dark:#EC4899; 
+--white:#FFFFFF;
+--glow:rgba(45,212,191,0.4);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Mitr',sans-serif;}
+
+body{
+background:var(--bg);
+display:flex;
+justify-content:center;
+}
+
+.container{
+max-width:500px;
+width:100%;
+padding:20px 15px 40px;
+}
+
+.section{
+background:var(--white);
+border-radius:20px;
+padding:25px 20px;
+margin-bottom:20px;
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
+border:2px solid var(--main);
+}
+
+h1,h2,h3{color:var(--dark);}
+.center{text-align:center;}
+
+.logo{
+width:150px;height:150px;
+border-radius:50%;
+overflow:hidden;
+margin:0 auto 20px;
+box-shadow:0 6px 20px var(--glow);
+}
+
+.logo img{width:100%;height:100%;object-fit:cover;}
+
+.badges{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+margin-bottom:20px;
+}
+
+.badge{
+background:#fff;
+padding:8px 16px;
+border-radius:25px;
+box-shadow:0 4px 10px var(--glow);
+font-size:13px;
+color:var(--dark);
+}
+
+.btn{
+display:block;
+text-align:center;
+padding:14px;
+border-radius:25px;
+text-decoration:none;
+margin-top:15px;
+font-weight:500;
+}
+
+.btn-outline{
+background:#fff;
+border:2px dashed var(--main);
+color:var(--dark);
+}
+
+.btn-main{
+background:var(--main);
+color:#fff;
+}
+
+.step{
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:12px;
+}
+
+.step-num{
+background:var(--main);
+color:#fff;
+width:26px;height:26px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:13px;
+}
+
+.price-row{
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+background:#fafffd;
+padding:10px 15px;
+border-radius:15px;
+}
+
+.price-tag{
+background:var(--main);
+color:#fff;
+padding:3px 12px;
+border-radius:20px;
+font-size:14px;
+}
+
+.footer{
+text-align:center;
+margin-top:30px;
+}
+
+.socials{
+display:flex;
+gap:8px;
+justify-content:center;
+margin-top:15px;
+}
+
+.socials a{
+flex:1;
+max-width:110px;
+text-align:center;
+padding:8px;
+border-radius:25px;
+background:#fff;
+text-decoration:none;
+color:var(--dark);
+font-size:13px;
+border:1px solid #e0f2f1;
+}
+
+.small{font-size:12px;opacity:.7;margin-top:10px;}
+
+/* CSS สำหรับ Section ต่างๆ */
+.img-fluid { width: 100%; border-radius: 15px; margin-bottom: 10px; object-fit: cover; }
+.img-row { display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; justify-content: center; }
+.img-row img { flex: 1; min-width: 30%; border-radius: 10px; object-fit: cover; max-height: 150px; }
+.text-box { background: #f4fdfb; padding: 15px; border-radius: 15px; font-size: 14px; margin-bottom: 10px; color: #333; }
+.text-box ul { padding-left: 20px; margin-top: 5px; }
+.text-box li { margin-bottom: 5px; }
+.queue-item { display: flex; justify-content: space-between; padding: 12px; border-bottom: 1px dashed var(--main); font-size: 14px; background: #fff; border-radius: 8px; margin-bottom: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+.queue-status { font-weight: bold; }
+.admin-panel { display: none; background: #fffcfd; padding: 15px; border-radius: 15px; margin-top: 10px; border: 2px dashed var(--dark); }
+.admin-input { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 8px; outline: none; font-family: 'Mitr', sans-serif; }
+.admin-input:focus { border-color: var(--main); }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="section center" style="border:none;box-shadow:none;background:transparent;">
+
+<div class="logo">
+<img src="-50_20251118193540.png" alt="logo">
+</div>
+
+<h1>rineris</h1>
+<p style="color:var(--dark);opacity:.8;margin:10px 0 20px;">
+จะมูจะตัดหรือจะแต่ง
+</p>
+
+<div class="badges">
+<div class="badge">🎨 CapCut | ขายแอพ และรับตัดต่อ</div>
+<div class="badge">🔮 ดูดวง</div>
+<div class="badge">💻 เว็บรับทำป้าย</div>
+</div>
+
+<a href="https://docs.google.com/spreadsheets/d/1-OKt-yfrnf19eACPvXyUJ3y4PthRKt6yqn3fxFNYVJY/edit?usp=sharing" class="btn btn-outline" target="_blank">
+เช็คคิวงาน ✨
+</a>
+</div>
+
+<div class="section">
+<h2>📊 สถานะคิวงาน</h2>
+<div id="queue-list" style="margin-top: 15px;">
+</div>
+<p id="admin-trigger" style="text-align:center; font-size:12px; opacity:0.3; margin-top:20px; cursor:pointer;">⚙️ ระบบจัดการคิว (Admin)</p>
+
+<div id="admin-panel" class="admin-panel">
+    <h3 style="font-size: 16px; margin-bottom: 10px;">ตั้งค่าคิว (Admin)</h3>
+    <input type="text" id="q-num" class="admin-input" placeholder="คิวที่ (เช่น 01, 02)">
+    <select id="q-item" class="admin-input">
+        <option value="ดูดวง">ดูดวง</option>
+        <option value="ทำเว็บ">ทำเว็บ</option>
+    </select>
+    <select id="q-status" class="admin-input">
+        <option value="จองคิว">จองคิว</option>
+        <option value="กำลังเริ่ม">กำลังเริ่ม</option>
+        <option value="ส่งงาน">ส่งงาน</option>
+    </select>
+    <button class="btn btn-main" style="width: 100%; border: none; cursor: pointer;" onclick="addQueue()">อัพเดทสถานะ</button>
+    <button class="btn btn-outline" style="width: 100%; cursor: pointer; padding: 10px; margin-top: 10px;" onclick="clearQueue()">ล้างคิวทั้งหมด</button>
+</div>
+</div>
+
+<div class="section">
+<h2>🔮 สายมู</h2>
+<div class="img-row" style="margin-top: 15px;">
+    <img src="5.jpg" alt="สายมู 1">
+    <img src="6.jpg" alt="สายมู 2">
+    <img src="7.jpg" alt="สายมู 3">
+</div>
+</div>
+
+<div class="section">
+<h2>🎬 CapCut</h2>
+<p style="text-align:center; margin-bottom: 15px; font-weight: 500; color: var(--dark);">CapCut เริ่มต้น 25฿</p>
+<div class="img-row">
+    <img src="cc1.png" alt="CapCut 1">
+    <img src="cc2.png" alt="CapCut 2">
+    <img src="cc3.png" alt="CapCut 3">
+</div>
+</div>
+
+<div class="section">
+<h2>🎬 ราคาตัดต่อ</h2>
+<img src="cc.png" alt="ราคาตัดต่อ" class="img-fluid" style="margin-top: 15px;">
+</div>
+
+<div class="section">
+<h2>⭐️ วิธีเข้าใช้งาน CapCut</h2>
+<img src="IMG_3136.jpg" alt="วิธีเข้าใช้งาน" class="img-fluid" style="margin-top: 15px;">
+<div class="text-box">
+    <p>เข้าผ่าน <strong>อีเมล & พาสเวิร์ด</strong> (ห้าม login google)</p>
+    <p style="margin-top: 10px;">หากต้องการเข้าในคอม ต้องเข้าผ่านมือถือก่อน:</p>
+    <ul>
+        <li>ต้องสแกน QR จากมือถือเท่านั้น</li>
+        <li>เข้าคอมแล้ว <strong>กรุณาออกจากโทรศัพท์ก่อน</strong> เพื่อกันล็อกนะคะ</li>
+    </ul>
+    <p style="color: #ef4444; margin-top: 15px; font-weight: bold; text-align: center;">ใช้ได้แค่ 1 เครื่องเท่านั้น!</p>
+</div>
+</div>
+
+<div class="section">
+<h2>📋 เงื่อนไขการสั่งของร้าน</h2>
+<div class="text-box" style="margin-top: 15px;">
+    <p>ตามปกติรองาน 24ชม. แล้วแต่คิวของวันนั้นๆ หากคิวว่างเริ่มทันที</p>
+    <ul>
+        <li>คิวปกติ 1-7 วัน (งานตัดคลิป)</li>
+        <li>คิวลัด +30 - 150฿ (1-3 วัน)</li>
+        <li>ต้องการงานทันที ดูที่สโคปงาน</li>
+    </ul>
+</div>
+</div>
+
+<div class="section">
+<h2>📋 ขั้นตอนการสั่ง</h2>
+<div class="text-box" style="margin-top: 15px;">
+    <p style="font-weight: bold; color: var(--dark); margin-bottom: 5px;">สอบถามก่อนโอนทุกครั้ง</p>
+    <ul>
+        <li>กรอกฟอร์ม เขียนรายละเอียด</li>
+        <li>ใส่ลิงก์ ตัวอย่างงานมาให้พร้อม หากมีโลโก้ให้แนบมา</li>
+        <li>ส่งงานให้เช็ค แจ้งยอด ชำระเงิน</li>
+        <li>รอลงคิวและอัพเดทงาน</li>
+    </ul>
+</div>
+</div>
+
+<div class="section">
+<h2>📍 กฎของร้าน 📍</h2>
+<div class="text-box" style="margin-top: 15px;">
+    <ul>
+        <li>ถ้าโอนเงินแล้วทางร้าน<strong>ไม่คืนเงินทุกกรณี</strong>นะคะ</li>
+        <li>หากยกเลิกงานหลังส่งบรีฟมาแล้ว หากงานเริ่มไปแล้วจะคืนแค่ 50%</li>
+        <li>หากยกเลิกหลังจากเช็คงาน = ไม่คืน และส่งงานให้ตามปกติ</li>
+    </ul>
+</div>
+</div>
+
+<div class="section">
+<h2>📝 ขั้นตอนสั่งงาน</h2>
+
+<div class="step"><div class="step-num">1</div><div>แจ้งประเภทงาน</div></div>
+<div class="step"><div class="step-num">2</div><div>เลือกของตกแต่ง</div></div>
+<div class="step"><div class="step-num">3</div><div>บรีฟงานละเอียด</div></div>
+<div class="step"><div class="step-num">4</div><div>แจ้งอีเมลรับงาน</div></div>
+<div class="step"><div class="step-num">5</div><div>ชำระเงินรอคิว</div></div>
+
+<a href="#" class="btn btn-main">เลือกของตกแต่ง</a>
+</div>
+
+<div class="section">
+<h2> ราคางาน</h2>
+
+<div class="price-row"><span>โลโก้ร้าน</span><span class="price-tag">79–119฿</span></div>
+<div class="price-row"><span>ลายน้ำ</span><span class="price-tag">49–69฿</span></div>
+<div class="price-row"><span>แนวน่ารัก</span><span class="price-tag">69–129฿</span></div>
+
+<a href="#" class="btn btn-main">เช็คราคาเพิ่มเติม</a>
+</div>
+
+<div class="footer">
+<a href="https://lin.ee/rVnmOtV" class="btn btn-main" target="_blank">ติดต่อสอบถามคลิก 🎀</a>
+
+<div class="socials">
+<a href="https://lin.ee/rVnmOtV" target="_blank">Line ดูดวง</a>
+<a href="https://line.me/ti/p/LfBtdhlrVa" target="_blank">Line</a>
+<a href="https://rineris.xdvz.xyz/" target="_blank">Shop</a>
+</div>
+
+<p class="small">
+© 2026 rineris
+</p>
+</div>
+
+</div>
+
+<script>
+// แจ้งเตือนแอดมินให้ไปอัพเดทคิวที่ Google Sheets แทน
+document.getElementById('admin-trigger').addEventListener('click', () => {
+    alert('✅ ระบบเชื่อมต่อกับ Google Sheets อัตโนมัติแล้วครับ\n\nแอดมินสามารถเข้าไปแก้ไข "สถานะคิว" ในไฟล์ Google Sheets ได้โดยตรงเลย ข้อมูลบนหน้าเว็บจะดึงไปโชว์อัตโนมัติครับ (หากพิมพ์สถานะว่า "เสร็จ" คิวจะหายไปจากหน้าเว็บให้เอง)');
+});
+
+// ไอดี Google Sheets จากลิ้งก์ของคุณ
+const sheetId = '1-OKt-yfrnf19eACPvXyUJ3y4PthRKt6yqn3fxFNYVJY';
+// ลิ้งก์สำหรับดึงข้อมูลเป็น CSV (ต้องมั่นใจว่าแชร์สิทธิ์แบบ "ทุกคนที่มีลิงก์ดูได้" แล้ว)
+const csvUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv`;
+
+async function fetchQueueFromSheet() {
+    const queueList = document.getElementById('queue-list');
+    queueList.innerHTML = '<div class="center small" style="opacity:0.6; padding:10px;">กำลังซิงค์คิวจาก Google Sheets... ⏳</div>';
+    
+    try {
+        const response = await fetch(csvUrl);
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.text();
+        
+        // แยกบรรทัดของข้อมูล Excel
+        const rows = data.split('\n').map(row => row.split(','));
+        let activeQueues = [];
+        
+        // เริ่มที่ i = 1 (บรรทัดที่ 2 ใน Excel เพื่อข้าม Header บรรทัดแรก)
+        for(let i = 1; i < rows.length; i++) {
+            if(rows[i].length >= 3) {
+                // ลบพวกเครื่องหมาย " ที่ติดมากับไฟล์ CSV ออก
+                let num = rows[i][0] ? rows[i][0].replace(/(^"|"$)/g, '').trim() : '';
+                let item = rows[i][1] ? rows[i][1].replace(/(^"|"$)/g, '').trim() : '';
+                let status = rows[i][2] ? rows[i][2].replace(/(^"|"$)/g, '').trim() : '';
+                
+                // ถ้ารหัสคิวไม่ว่างเปล่า และสถานะไม่ใช่คำว่า "เสร็จ" (พิมพ์ เสร็จ เป๊ะๆ)
+                if(num !== '' && status !== 'เสร็จ') {
+                    activeQueues.push({ num, item, status });
+                }
+            }
+        }
+        
+        // จำกัดให้แสดงสูงสุดแค่ 10 คิว
+        activeQueues = activeQueues.slice(0, 10);
+        
+        // วาดรายการคิว
+        renderQueue(activeQueues);
+        
+    } catch (error) {
+        queueList.innerHTML = '<div class="center small" style="opacity:0.6; padding:10px; color:var(--dark);">ไม่สามารถดึงข้อมูลได้ โปรดตรวจสอบการแชร์ไฟล์ Sheets</div>';
+        console.error("Fetch Error:", error);
+    }
+}
+
+function renderQueue(queues) {
+    const queueList = document.getElementById('queue-list');
+    queueList.innerHTML = '';
+    
+    if(queues.length === 0) {
+        queueList.innerHTML = '<div class="center small" style="opacity:0.6; padding:10px;">ตอนนี้คิวว่าง / งานเสร็จครบหมดแล้ว 🎉</div>';
+        return;
+    }
+    
+    queues.forEach((q) => {
+        // เปลี่ยนสีตามสถานะคร่าวๆ
+        let statusColor = q.status.includes('ส่งงาน') ? '#2DD4BF' : (q.status.includes('กำลังเริ่ม') ? '#F59E0B' : 'var(--dark)');
+        queueList.innerHTML += `
+            <div class="queue-item">
+                <div><strong>คิวที่ ${q.num}</strong> <span style="font-size: 13px; color: #666;">(${q.item})</span></div>
+                <div class="queue-status" style="color:${statusColor}">${q.status}</div>
+            </div>
+        `;
+    });
+}
+
+// โหลดข้อมูลอัตโนมัติทันทีที่เปิดเว็บ
+fetchQueueFromSheet();
+
+// ปิดฟังก์ชันเดิมของแอดมิน เพื่อกันการกดพลาด เนื่องจากใช้ระบบ Sheets แทนแล้ว
+function addQueue() {} 
+function clearQueue() {}
+</script>
+
+</body>
+</html>

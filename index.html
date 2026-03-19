@@ -329,15 +329,14 @@ border:1px solid #e0f2f1;
 </div>
 
 <script>
-// แจ้งเตือนแอดมินให้ไปอัพเดทคิวที่ Google Sheets แทน
+// แจ้งเตือนแอดมิน
 document.getElementById('admin-trigger').addEventListener('click', () => {
-    alert('✅ ระบบเชื่อมต่อกับ Google Sheets อัตโนมัติแล้วครับ\n\nแอดมินสามารถเข้าไปแก้ไข "สถานะคิว" ในไฟล์ Google Sheets ได้โดยตรงเลย ข้อมูลบนหน้าเว็บจะดึงไปโชว์อัตโนมัติครับ (หากพิมพ์สถานะว่า "เสร็จ" คิวจะหายไปจากหน้าเว็บให้เอง)');
+    alert('✅ ระบบเชื่อมต่อกับ Google Sheets อัตโนมัติแล้วครับ\n\nแก้ไขใน Google Sheets ได้เลย ข้อมูลจะมาขึ้นที่หน้าเว็บให้อัตโนมัติ (หากพิมพ์สถานะว่า "ส่งงานแล้ว" คิวจะถูกซ่อนจากหน้าเว็บครับ)');
 });
 
-// ไอดี Google Sheets จากลิ้งก์ของคุณ
 const sheetId = '1-OKt-yfrnf19eACPvXyUJ3y4PthRKt6yqn3fxFNYVJY';
-// ลิ้งก์สำหรับดึงข้อมูลเป็น CSV (ต้องมั่นใจว่าแชร์สิทธิ์แบบ "ทุกคนที่มีลิงก์ดูได้" แล้ว)
-const csvUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv`;
+// ใช้ URL gviz ของ Google เพื่อป้องกันเบราว์เซอร์บล็อกการดึงข้อมูล (CORS)
+const csvUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv`;
 
 async function fetchQueueFromSheet() {
     const queueList = document.getElementById('queue-list');
@@ -348,33 +347,30 @@ async function fetchQueueFromSheet() {
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.text();
         
-        // แยกบรรทัดของข้อมูล Excel
+        // แยกบรรทัดและข้อมูล
         const rows = data.split('\n').map(row => row.split(','));
         let activeQueues = [];
         
-        // เริ่มที่ i = 1 (บรรทัดที่ 2 ใน Excel เพื่อข้าม Header บรรทัดแรก)
+        // เริ่มที่ i = 1 (ข้ามหัวข้อบรรทัดแรกใน Excel)
         for(let i = 1; i < rows.length; i++) {
             if(rows[i].length >= 3) {
-                // ลบพวกเครื่องหมาย " ที่ติดมากับไฟล์ CSV ออก
+                // ลบพวกเครื่องหมาย " 
                 let num = rows[i][0] ? rows[i][0].replace(/(^"|"$)/g, '').trim() : '';
                 let item = rows[i][1] ? rows[i][1].replace(/(^"|"$)/g, '').trim() : '';
                 let status = rows[i][2] ? rows[i][2].replace(/(^"|"$)/g, '').trim() : '';
                 
-                // ถ้ารหัสคิวไม่ว่างเปล่า และสถานะไม่ใช่คำว่า "เสร็จ" (พิมพ์ เสร็จ เป๊ะๆ)
-                if(num !== '' && status !== 'เสร็จ') {
+                // เงื่อนไข: ถ้ามีเลขคิว และ สถานะต้องไม่ใช่คำว่า "ส่งงานแล้ว"
+                if(num !== '' && status !== 'ส่งงานแล้ว') {
                     activeQueues.push({ num, item, status });
                 }
             }
         }
         
-        // จำกัดให้แสดงสูงสุดแค่ 10 คิว
-        activeQueues = activeQueues.slice(0, 10);
-        
         // วาดรายการคิว
         renderQueue(activeQueues);
         
     } catch (error) {
-        queueList.innerHTML = '<div class="center small" style="opacity:0.6; padding:10px; color:var(--dark);">ไม่สามารถดึงข้อมูลได้ โปรดตรวจสอบการแชร์ไฟล์ Sheets</div>';
+        queueList.innerHTML = '<div class="center small" style="opacity:0.6; padding:10px; color:var(--dark);">ไม่สามารถดึงข้อมูลได้ โปรดตรวจสอบการแชร์ไฟล์ Sheets หรืออินเทอร์เน็ต 😥</div>';
         console.error("Fetch Error:", error);
     }
 }
@@ -389,8 +385,9 @@ function renderQueue(queues) {
     }
     
     queues.forEach((q) => {
-        // เปลี่ยนสีตามสถานะคร่าวๆ
-        let statusColor = q.status.includes('ส่งงาน') ? '#2DD4BF' : (q.status.includes('กำลังเริ่ม') ? '#F59E0B' : 'var(--dark)');
+        // เปลี่ยนสีถ้าสถานะคือ กำลังดำเนินการ จะเด่นขึ้นมาหน่อย
+        let statusColor = q.status.includes('กำลังดำเนินการ') ? '#F59E0B' : 'var(--dark)';
+        
         queueList.innerHTML += `
             <div class="queue-item">
                 <div><strong>คิวที่ ${q.num}</strong> <span style="font-size: 13px; color: #666;">(${q.item})</span></div>
@@ -400,10 +397,10 @@ function renderQueue(queues) {
     });
 }
 
-// โหลดข้อมูลอัตโนมัติทันทีที่เปิดเว็บ
+// โหลดข้อมูลอัตโนมัติ
 fetchQueueFromSheet();
 
-// ปิดฟังก์ชันเดิมของแอดมิน เพื่อกันการกดพลาด เนื่องจากใช้ระบบ Sheets แทนแล้ว
+// ปิดฟังก์ชันเดิม
 function addQueue() {} 
 function clearQueue() {}
 </script>

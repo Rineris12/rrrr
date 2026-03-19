@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rineris - Official</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* แก้ไขโทนสีเป็น ฟ้าเทอควอยซ์ และ ชมพู ตกแต่งเบาๆ */
+:root{
+--bg:#E8FAFA; /* ฟ้าเทอควอยซ์อ่อนๆ */
+--main:#FF9EBB; /* ชมพูพาสเทล */
+--dark:#008080; /* สีเขียวอมฟ้าเข้ม สำหรับตัวหนังสือให้อ่านง่าย */
+--white:#FFFFFF;
+--glow:rgba(255, 158, 187, 0.4); /* แสงเงาสีชมพู */
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Mitr',sans-serif;}
+
+body{
+background:var(--bg);
+display:flex;
+justify-content:center;
+}
+
+.container{
+max-width:500px;
+width:100%;
+padding:20px 15px 40px;
+}
+
+.section{
+background:var(--white);
+border-radius:20px;
+padding:25px 20px;
+margin-bottom:20px;
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
+border:2px solid var(--main);
+}
+
+h1,h2,h3{color:var(--dark);}
+.center{text-align:center;}
+
+.logo{
+width:150px;height:150px;
+border-radius:50%;
+overflow:hidden;
+margin:0 auto 20px;
+box-shadow:0 6px 20px var(--glow);
+}
+
+.logo img{width:100%;height:100%;object-fit:cover;}
+
+.badges{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+margin-bottom:20px;
+}
+
+.badge{
+background:#fff;
+padding:8px 16px;
+border-radius:25px;
+box-shadow:0 4px 10px var(--glow);
+font-size:13px;
+color:var(--dark);
+border: 1px solid #ffeef5;
+}
+
+.btn{
+display:block;
+text-align:center;
+padding:14px;
+border-radius:25px;
+text-decoration:none;
+margin-top:15px;
+font-weight:500;
+}
+
+.btn-outline{
+background:#fff;
+border:2px dashed var(--main);
+color:var(--dark);
+}
+
+.btn-main{
+background:var(--main);
+color:#fff;
+}
+
+.step{
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:12px;
+color: var(--dark);
+}
+
+.step-num{
+background:var(--main);
+color:#fff;
+width:26px;height:26px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:13px;
+}
+
+.price-row{
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+background:#fffcfd;
+padding:10px 15px;
+border-radius:15px;
+color: var(--dark);
+border: 1px solid #ffeef5;
+}
+
+.price-tag{
+background:var(--main);
+color:#fff;
+padding:3px 12px;
+border-radius:20px;
+font-size:14px;
+}
+
+.footer{
+text-align:center;
+margin-top:30px;
+}
+
+.socials{
+display:flex;
+gap:8px;
+justify-content:center;
+margin-top:15px;
+}
+
+.socials a{
+flex:1;
+max-width:100px;
+text-align:center;
+padding:8px;
+border-radius:25px;
+background:#fff;
+text-decoration:none;
+color:var(--dark);
+font-size:13px;
+border:1px solid #ffeef5;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.small{font-size:12px;opacity:.7;margin-top:10px; color: var(--dark);}
+
+/* ========================================= */
+/* ส่วน CSS ที่เพิ่มมาเพื่อจัด Layout ของใหม่ */
+/* ========================================= */
+.image-grid { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
+.image-grid img { width: calc(33.33% - 7px); border-radius: 12px; object-fit: cover; aspect-ratio: 1; border: 1px solid #ffeef5; }
+.image-single img { width: 100%; border-radius: 12px; margin-top: 10px; border: 1px solid #ffeef5; }
+.rules-list { font-size: 14px; color: var(--dark); line-height: 1.6; margin-top: 10px; }
+.highlight { font-weight: 500; color: #fff; background: #FF9EBB; padding: 2px 8px; border-radius: 15px; display: inline-block; margin-top: 5px;}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="section center" style="border:none;box-shadow:none;background:transparent;">
+
+<div class="logo">
+<img src="-50_20251118193540.png" alt="logo">
+</div>
+
+<h1>rineris</h1>
+<p style="color:var(--dark);opacity:.8;margin:10px 0 20px;">
+จะมูจะตัดหรือจะแต่ง
+</p>
+
+<div class="badges">
+<div class="badge">🎬 CapCut | ขายแอพ และรับตัดต่อ</div>
+<div class="badge">🔮 ดูดวง</div>
+<div class="badge">🎨 เว็บรับทำป้าย</div>
+</div>
+
+<a href="https://docs.google.com/spreadsheets/d/1-OKt-yfrnf19eACPvXyUJ3y4PthRKt6yqn3fxFNYVJY/edit?usp=sharing" class="btn btn-outline" target="_blank">
+เช็คคิวงาน ✨
+</a>
+</div>
